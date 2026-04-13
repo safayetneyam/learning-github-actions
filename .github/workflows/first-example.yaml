@@ -4,11 +4,17 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-            - name: checkout Repository
+            - name: Checkout Repository
               uses: actions/checkout@v6
-            - name: Welcome
-              run: echo "My first Github Actions job!"
-            - name: List Files
-              run: ls
-            - name: Read File
-              run: cat README.md
+            - name: List and Read Files
+              run: | 
+                echo "My first Github Actions job!"
+                ls -ltra
+                cat README.md
+            - name:  Generate ASCII Artwork
+              run: cowsay -f dragon "Run for Cover, I'm a Dragon .... RAWR" >> dragon.txt
+
+            # - name: List Files
+            #   run: 
+            # - name: Read File
+            #   run: cat README.md
